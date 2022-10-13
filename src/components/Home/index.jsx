@@ -3,6 +3,7 @@ import perfil from '../../Images/perfil-circle.png'
 import profile from '../../Images/portrait_body.jpg'
 import './Home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -14,21 +15,35 @@ const Home = () => {
     <>
       <div className='cont-home'>
         <picture className='cont-image'>
-          <source className='image-profile' srcSet={profile} media="(min-width: 768px)" />
-          <img className='image-perfil' src={perfil} alt='Autor del portafolio' />
+          <source
+            className='image-profile'
+            srcSet={profile}
+            media="(min-width: 768px)" />
+          <img
+            className='image-perfil'
+            src={perfil}
+            alt='Autor del portafolio' />
         </picture>
         <div className='menu'>
           <div>
-            <a className='a-link'>
+            <Link to="/about" className='a-link'>
               <p
                 className='c1'
                 onMouseEnter={() => setAbout('Acerca de mi')}
                 onMouseLeave={() => setAbout('Hola')}
-                onClick={() => window.location.href('/pages/about.js')}
               >
                 {about}
               </p>
-            </a>
+            </Link>
+            {/* <a href='/#/about' className='a-link'>
+              <p
+                className='c1'
+                onMouseEnter={() => setAbout('Acerca de mi')}
+                onMouseLeave={() => setAbout('Hola')}
+              >
+                {about}
+              </p>
+            </a> */}
           </div>
           <div>
             <a href="" className='a-link'>
